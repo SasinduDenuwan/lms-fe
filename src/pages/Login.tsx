@@ -18,7 +18,7 @@ export default function LoginPage() {
   const passwordRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (email.trim() === '') {
@@ -111,7 +111,7 @@ export default function LoginPage() {
           </div>
 
           {/* Form */}
-          <div className="space-y-6 animate-fade-in-up">
+          <form className="space-y-6 animate-fade-in-up" onSubmit={handleSubmit}>
             {/* Email input */}
             <div className="relative group">
               <label className="block text-sm font-semibold text-gray-700 mb-2 ml-1">Email Address</label>
@@ -126,6 +126,7 @@ export default function LoginPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   className="block w-full pl-11 pr-4 py-3.5 bg-gray-50/50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 focus:bg-white transition-all duration-200 ease-out placeholder-gray-400"
                   placeholder="you@example.com"
+                  autoComplete="email"
                 />
               </div>
             </div>
@@ -144,6 +145,7 @@ export default function LoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   className="block w-full pl-11 pr-12 py-3.5 bg-gray-50/50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 focus:bg-white transition-all duration-200 ease-out placeholder-gray-400"
                   placeholder="••••••••"
+                  autoComplete="current-password"
                 />
                 <button
                   type="button"
@@ -182,7 +184,7 @@ export default function LoginPage() {
 
             {/* Submit button */}
             <button
-              onClick={handleSubmit}
+              type="submit"
               disabled={isLoading}
               className="w-full relative overflow-hidden group bg-linear-to-r from-teal-500 to-blue-600 text-white py-4 rounded-2xl font-bold shadow-lg shadow-teal-500/30 hover:shadow-teal-500/40 transform hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-teal-500/20 disabled:opacity-70 disabled:cursor-not-allowed"
             >
@@ -198,7 +200,7 @@ export default function LoginPage() {
                 )}
               </div>
             </button>
-          </div>
+          </form>
 
 
 
