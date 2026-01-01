@@ -148,6 +148,7 @@ export default function SignUpPage() {
                     onChange={(e) => setFirstname(e.target.value)}
                     className="block w-full pl-11 pr-4 py-3 bg-gray-50/50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 focus:bg-white transition-all duration-200 ease-out placeholder-gray-400 text-sm"
                     placeholder="First Name"
+                    autoComplete="given-name"
                     />
                 </div>
                 </div>
@@ -164,6 +165,7 @@ export default function SignUpPage() {
                     onChange={(e) => setLastname(e.target.value)}
                     className="block w-full pl-11 pr-4 py-3 bg-gray-50/50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 focus:bg-white transition-all duration-200 ease-out placeholder-gray-400 text-sm"
                     placeholder="Last Name"
+                    autoComplete="family-name"
                     />
                 </div>
                 </div>
@@ -182,6 +184,7 @@ export default function SignUpPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   className="block w-full pl-11 pr-4 py-3.5 bg-gray-50/50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 focus:bg-white transition-all duration-200 ease-out placeholder-gray-400"
                   placeholder="name@company.com"
+                  autoComplete="email"
                 />
               </div>
             </div>
@@ -199,6 +202,7 @@ export default function SignUpPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   className="block w-full pl-11 pr-12 py-3.5 bg-gray-50/50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 focus:bg-white transition-all duration-200 ease-out placeholder-gray-400"
                   placeholder="Create a strong password"
+                  autoComplete="new-password"
                 />
                 <button
                   type="button"
@@ -223,6 +227,7 @@ export default function SignUpPage() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   className="block w-full pl-11 pr-12 py-3.5 bg-gray-50/50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 focus:bg-white transition-all duration-200 ease-out placeholder-gray-400"
                   placeholder="Repeat your password"
+                  autoComplete="new-password"
                 />
                 <button
                   type="button"
