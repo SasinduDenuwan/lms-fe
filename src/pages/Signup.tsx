@@ -23,7 +23,7 @@ export default function SignUpPage() {
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (firstname.trim() === '') {
@@ -133,7 +133,7 @@ export default function SignUpPage() {
             <p className="text-gray-500 font-medium">Start your journey with us today</p>
           </div>
 
-          <div className="space-y-5 animate-fade-in-up">
+          <form className="space-y-5 animate-fade-in-up" onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-4">
                 <div className="relative group">
                 <label className="block text-sm font-semibold text-gray-700 mb-2 ml-1">First Name</label>
@@ -241,7 +241,7 @@ export default function SignUpPage() {
             </div>
 
             <button
-              onClick={handleSubmit}
+              type="submit"
               disabled={isLoading}
               className="w-full relative overflow-hidden group bg-linear-to-r from-indigo-500 to-blue-600 text-white py-4 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/40 transform hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-indigo-500/20 disabled:opacity-70 disabled:cursor-not-allowed mt-4"
             >
@@ -257,7 +257,7 @@ export default function SignUpPage() {
                 )}
               </div>
             </button>
-          </div>
+          </form>
 
           <p className="text-center text-sm text-gray-500 mt-8 font-medium animate-fade-in-up animation-delay-500">
             Already have an account?{' '}
