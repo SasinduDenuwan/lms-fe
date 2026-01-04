@@ -1,5 +1,4 @@
 import {
-  lazy,
   Suspense,
   useEffect,
   useState,
@@ -26,11 +25,13 @@ import StudentDashboard from "../pages/StudentDashboard";
 import AdminDashboard from "../pages/AdminDashboard";
 import LoadingPage from "../components/LoadingPage";
 
-const AccessDenied = lazy(() => import("../components/AccessDenid"));
-const LoginPage = lazy(() => import("../pages/Login"));
-const SignupPage = lazy(() => import("../pages/Signup"));
-const ResetPWPage = lazy(() => import("../pages/ResetPW"));
-const ProfilePage = lazy(() => import("../pages/ProfilePage"));
+import { lazyRetry } from "../utils/lazyImport";
+
+const AccessDenied = lazyRetry(() => import("../components/AccessDenid"), "AccessDenied");
+const LoginPage = lazyRetry(() => import("../pages/Login"), "LoginPage");
+const SignupPage = lazyRetry(() => import("../pages/Signup"), "SignupPage");
+const ResetPWPage = lazyRetry(() => import("../pages/ResetPW"), "ResetPWPage");
+const ProfilePage = lazyRetry(() => import("../pages/ProfilePage"), "ProfilePage");
 
 const AppProvidersLayout = () => (
   <AIProvider>
