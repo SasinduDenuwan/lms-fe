@@ -881,10 +881,9 @@ const Index: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="grid grid-cols-3 gap-6 mt-12"
+                className="grid grid-cols-2 gap-6 mt-12"
               >
                 {[
-                  { number: courses.reduce((acc, curr) => acc + (curr.students || 0), 0) + '+', label: 'Students' },
                   { number: courses.length + '+', label: 'Courses' },
                   { number: '98%', label: 'Success Rate' }
                 ].map((stat) => (
@@ -1157,7 +1156,7 @@ const Index: React.FC = () => {
                     {instructor.bio}
                   </p>
                   {/* Enhanced Stats */}
-                  <div className="grid grid-cols-3 gap-3 mb-6">
+                  <div className="grid grid-cols-2 gap-3 mb-6">
                     <div className="text-center bg-teal-50/50 rounded-xl p-3 group-hover:bg-teal-100/50 transition-colors duration-300">
                       <div className="text-lg font-bold text-teal-600">{instructor.experience}</div>
                       <div className="text-xs text-gray-600 font-medium">Experience</div>
@@ -1166,10 +1165,7 @@ const Index: React.FC = () => {
                       <div className="text-lg font-bold text-blue-600">{instructor.courses}</div>
                       <div className="text-xs text-gray-600 font-medium">Courses</div>
                     </div>
-                    <div className="text-center bg-purple-50/50 rounded-xl p-3 group-hover:bg-purple-100/50 transition-colors duration-300">
-                      <div className="text-lg font-bold text-purple-600">{(instructor.students || 0).toLocaleString()}</div>
-                      <div className="text-xs text-gray-600 font-medium">Students</div>
-                    </div>
+
                   </div>
                 </div>
               </motion.div>
