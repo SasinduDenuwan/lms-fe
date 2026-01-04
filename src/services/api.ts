@@ -2,7 +2,7 @@ import axios, { AxiosError } from "axios";
 import { refreshTokens } from "./auth";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "https://lms-be-tau.vercel.app/api/v1",
+  baseURL: "https://lms-be-tau.vercel.app/api/v1",
   withCredentials: true,
 });
 
