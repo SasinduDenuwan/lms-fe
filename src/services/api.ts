@@ -3,6 +3,7 @@ import { refreshTokens } from "./auth";
 
 const api = axios.create({
   baseURL: "https://lms-be-tau.vercel.app/api/v1",
+  withCredentials: true,  
 });
 
 const PUBLIC_ENDPOINTS = ["/auth/login", "/auth/register", "/auth/refresh"];
